@@ -26,14 +26,30 @@ $ ~/catkin_ws && catkin_make_isoated
 ***  
 
 ***  
-본 절에서 
-### [1] OMPL git clone: 
+본 절에서 ompl의 최신 버전을 다운받고, 이를 커스터마이징한 후, 빌드하여 ros에서 linking하는 방법을 설명한다.
+### [1] OMPL installation: 
+우선 아래의 링크에서 'From source' 칸에서 **./install-ompl-ubuntu.sh**을 다운받는다.
+https://ompl.kavrakilab.org/installation.html
 
-OMPL 라이브러리 자체가, ROS의 package라고 생각을 하자.
-현재 시스템의 catkin_ws/src 경로에 ompl github을 clone한다.
+
+그 후, 해당 폴더에 들어가서
 ```
-$ ~/catkin_ws/src && git clone https://github.com/ompl/ompl.git
+$ ~/OMPL_INSTALLATION_FOLDER && ./install-ompl-ubuntu.sh
 ```
+
+이를 실행하게 되면서, 크게 설정할 수 있는 부분은 두가지이다.
+install-ompl-ubuntu.sh 에서  
+1) ompl library 경로를 추가하는 부분:  
+install_ompl() 함수에서 github ompl 최신 버전을 clone한 후, CMAKE를 하는 과정  
+cmake ../.. -DPYTHON_EXEC=/usr/bin/python${PYTHONV}  
+
+이때 이 문구에 CMAKE_INSTALL 경로를 추가해준다.
+cmake ../.. -DPYTHON_EXEC=/usr/bin/python${PYTHONV}  -DCMAKE_INSTALL_PREFIX=/opt/ros/kinetic ../..  
+이렇게 정하게 되면, /opt/ros/kinetic 경로에 MAKE 경로를 추가하게 된다.
+  
+2) sudo make install
+install_ompl() 함수에서 마지막 줄에 있는 구문으로, 이 의미는 github ompl source를 빌드하여, 위에서 정한 경로에 libompl.so, libompl-<version>.so, ... 를 생성하게 된다.
+
 ***
 
 ### [2] build (NOT USED):
