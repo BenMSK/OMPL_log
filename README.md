@@ -5,24 +5,24 @@ tip for using ompl
 
 ***  
 
-### [1] OMPL git clone (NOT USED): 
+### ~~[1] OMPL git clone (NOT USED): 
 
-OMPL 라이브러리 자체가, ROS의 package라고 생각을 하자.
+~~OMPL 라이브러리 자체가, ROS의 package라고 생각을 하자.
 현재 시스템의 catkin_ws/src 경로에 ompl github을 clone한다.
 ```
 $ ~/catkin_ws/src && git clone https://github.com/ompl/ompl.git
 ```
 ***
 
-### ---[2] build (NOT USED)---:
+### ~~[2] build (NOT USED)~~:
 
-clone된 ompl src folder가 있는 상태에서, catkin_ws에 catkin_make_isolated를 진행한다.
+~~clone된 ompl src folder가 있는 상태에서, catkin_ws에 catkin_make_isolated를 진행한다.
 
 ```
 $ ~/catkin_ws && catkin_make_isoated
 ```
-isolated로 진행할 때, 각 catkin_ws/src에 package를 각각 빌드 하는 것으로 보인다.
-일반적인 catkin_make 보다 더 느리다...
+~~isolated로 진행할 때, 각 catkin_ws/src에 package를 각각 빌드 하는 것으로 보인다.~~
+~~일반적인 catkin_make 보다 더 느리다...~~
 ***  
 
 ***  
