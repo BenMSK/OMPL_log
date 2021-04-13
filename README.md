@@ -78,7 +78,8 @@ $ cd ~/OMPL_INSTALLATION_FOLDER/ompl-1.5.0/build/Release
   
 즉, ompl-1.5.0 폴더에서 /build/Release 에 들어간다.  
 이 폴더의 의미는 우리가 [1] 과정에서 빌드하면서 생기는 ompl build 폴더이며, 
-우리가 수정한 source 코드의 실행 파일을 만들어서 저장이 되는 곳이다.
+우리가 수정한 source 코드의 실행 파일을 만들어서 저장이 되는 곳이다.  
+아래와 같이 설치 경로 (INSTALL_PREFIX=~)를 '/opt/ros/kinetic ~'으로 안한다면, default로 bin에 설치되는 듯.  
 ```
 /OMPL_INSTALLATION_FOLDER/ompl-1.5.0/build/Release$ cmake ../.. -DPYTHON_EXEC=/usr/bin/python${PYTHONV}  -DCMAKE_INSTALL_PREFIX=/opt/ros/kinetic ../..  
 ```
