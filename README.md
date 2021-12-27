@@ -145,6 +145,12 @@ ompl installation page [https://ompl.kavrakilab.org/installation.html]
 하지만, catkin_make 시, doRRT star가 여전히 /opt/ros/kinetic/lib/x~/lib/libompl.so 경로를 참조하려고 하는 문제가 발생...
 해결 못해서, 위와 같은 접근 방식으로 진행...
 
+### [XXX] Py-bindings:
+./install_ubuntu_sh --python으로 실행 뒤,  
+ompl build/Release에서, 'make -j 20 update_bindings'  
+'make py_ompl' 진행 후, 부터 python3에서 import ompl이 동작. python3 
+  
+  
 > This repository has **non-profit purposes**.\
 > It is going to be updated, futher.\
 > If you have any question, \
