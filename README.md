@@ -149,8 +149,13 @@ ompl installation page [https://ompl.kavrakilab.org/installation.html]
 ./install_ubuntu_sh --python으로 실행 뒤,  
 ompl build/Release에서, 'make -j 20 update_bindings'  
 'make py_ompl' 진행 후, 부터 python3에서 import ompl이 동작. python3 
-  
-  
+-> 결론적으로, update_bindings는 위에 ompl src build 과정 후에 적용이 되어야, 바뀐 내용을 py++로 변환하여 업데이트.  
+순서는  
+  1) ompl src 수정  
+  2) ompl build/Release에서, 'sudo make install'로 ompl.so 만들기  
+  3) ompl build/Release에서, 'make -j 20 update_bindings' 진행  
+  4) ompl build/Release에서, 'make py_ompl'로 pip3 모듈에서 ompl 사용할 수 있도록.  
+ 
 > This repository has **non-profit purposes**.\
 > It is going to be updated, futher.\
 > If you have any question, \
